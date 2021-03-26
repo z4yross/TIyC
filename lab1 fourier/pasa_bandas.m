@@ -28,4 +28,4 @@ Y = H .* X;
 y = ifft(Y);
 
 #Gráficas de las señales x(t), X(\omega), Y(\omega) y y(t).
-plot_4(t, x, y, omega, X, Y, H, 'Señal Filtrada PasaBanda ideal Y(\omega)');
+plot_4(t, x, y, omega, abs(X), abs(Y), H, 'Señal Filtrada PasaBanda ideal Y(\omega)');
