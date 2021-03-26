@@ -1,6 +1,6 @@
 #Definición de la función pulso rectangular x(t).
 Fs = 100;               % Frecuencia de muestreo
-Ts = 1/fs;              % Periodo de muestreo
+Ts = 1/Fs;              % Periodo de muestreo
 p = 1;                  % pulso
 l = 3;                  % Limites
 t = -l:Ts:l;            % Dominio

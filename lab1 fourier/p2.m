@@ -1,5 +1,5 @@
 Fs = 100;               % Frecuencia de muestreo
-Ts = 1/fs;              % Periodo de muestreo
+Ts = 1/Fs;              % Periodo de muestreo
 p = 1;                  % pulso
 l = 3;                  % Limites
 t = -l:Ts:l;            % Dominio
@@ -14,7 +14,7 @@ y = 2*p*sa(p*omega_2);             % Transformada analitica
 
 %Graficas
 subplot(1,2,1);
-stem(omegaFFT, fftshift(X));
+stem(omegaFFT, abs(fftshift(X)));
 axis([-20 20 -2.5 2.5]);
 title('Transformada Rapida de Fourier FFT');
 xlabel('\omega');

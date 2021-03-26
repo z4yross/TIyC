@@ -10,7 +10,7 @@ function X = stf(t, T, N, x, w0)
   endfor
 endfunction
 
-N = 10;                   % Truncado en k = N
+N = 10;                    % Truncado en k = N
 Fs = 100;                  % Frecuencia de muestreo
 T = 2;                     % Periodo
 w = 2 * pi / T;            % Frecuencia angular

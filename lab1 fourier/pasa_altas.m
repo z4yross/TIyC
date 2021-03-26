@@ -1,6 +1,6 @@
 #Definición de la función pulso rectangular x(t).
 Fs = 100;               % Frecuencia de muestreo
-Ts = 1/fs;              % Periodo de muestreo
+Ts = 1/Fs;              % Periodo de muestreo
 p = 1;                  % pulso
 l = 3;                  % Limites
 t = -l:Ts:l;            % Dominio
@@ -26,4 +26,4 @@ Y = H .* X;
 y = ifft(Y);
 
 #Gráficas de las señales x(t), X(\omega), Y(\omega) y y(t).
-plot_4(t, x, y, omega, X, Y, H, 'Señal Filtrada PasaAltas ideal Y(\omega)');
+plot_4(t, x, y, omega, abs(X), abs(Y), H, 'Señal Filtrada PasaAltas ideal Y(\omega)');
