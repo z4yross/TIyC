@@ -15,7 +15,7 @@ y = 2*p*sa(p*omega_2);             % Transformada analitica
 %Graficas
 subplot(1,2,1);
 stem(omegaFFT, abs(fftshift(X)));
-axis([-20 20 -2.5 2.5]);
+axis([-20 20 -0.5 2.5]);
 title('Transformada Rapida de Fourier FFT');
 xlabel('\omega');
 ylabel('X(\omega)');
@@ -23,7 +23,7 @@ grid;
 
 subplot(1,2,2);
 plot(omega_2,y,'-r');
-axis([-20 20 -2.5 2.5]);
+axis([-20 20 -0.5 2.5]);
 title('Transformada de Fourier Analitica');
 grid;xlabel('\omega');
 ylabel('X(\omega)');
