@@ -62,28 +62,28 @@ hold off;
 
 %----------- CODIFICADOR -----------
 
-n = round(log2(max(q) + 1));
-mcod = '';
+n = round(log2(max(q) + 1));  % Cantidad de bits necesitada por nivvel
+mcod = '';                    % Cadena de niveles en binario
 
 for j = 1:length(q)
-  mcod = strcat(mcod, dec2bin(q(j), n));
+  mcod = strcat(mcod, dec2bin(q(j), n)); % Convertir el nivel correspondiente a binario
 endfor
 
-bits = ones(1,length(mcod));             
+bits = ones(1,length(mcod));             % Cadena de bits
 for i = 1:length(mcod)
   bits(i) = bits(i)*str2num(mcod(i));
 endfor
 
 #---------- FORMATO UNIPOLAR NRZ ----------
 
-bts = [0:.1:length(bits)];
+bts = [0:.1:length(bits)];      % Dominio para la representacion unipolar
 
 unz = zeros(1, length(bts));
 
 for i = 0:length(bits)-1
   if (bits(i+1) == 1)
     for j = 1:10
-      unz((10*i)+j) = 1;
+      unz((10*i)+j) = 1;       % Se llena todo el bit en el dominio
     endfor
   endif
 endfor
@@ -95,6 +95,7 @@ axis([0 length(bits) -1.1 1.1]);
 grid;
 
 %----------- DECODIFICADOR -----------
+% Se convierten los bits a los niveles de cuantizacion correspondiente
 
 mqrl = zeros(1, length(bits)/n);
 
@@ -107,7 +108,7 @@ for j = 1:2:round(length(bits))
 endfor
 
 %----------- DEMODULADOR -----------
-
+% Se recupera la señal con la formula del teorema del muestreo e(5.2) simplificada con sinc
 n = 2;
 L = 2^n;
 delta = 2 * mp / L;
